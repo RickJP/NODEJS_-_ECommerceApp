@@ -18,12 +18,11 @@ const options = {
 mongoose.connect(db_url, options)
 .then(() => console.log('MongoDB Connected successfully'));
 
-
+// Middleware
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(expressValidator());
-// Middleware
 app.use('/api', userRoutes);
 
 const port = process.env.PORT || 8000;
