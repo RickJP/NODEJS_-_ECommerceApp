@@ -4,6 +4,7 @@ const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const expressValidator = require('express-validator');
+const cors = require('cors');
 
 const userRoutes = require('./routes/user');
 const authRoutes = require('./routes/auth');
@@ -25,14 +26,18 @@ mongoose.connect(db_url, options)
 .then(() => console.log('MongoDB Connected successfully'));
 
 // Middleware
+app.use(cors());
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(expressValidator());
+
+// Routes middleware
 app.use('/api', userRoutes);
 app.use('/api', authRoutes);
 app.use('/api', categoryRoutes);
 app.use('/api', productRoutes);
+
 
 const port = process.env.PORT || 8000;
 app.listen(port, () => {
