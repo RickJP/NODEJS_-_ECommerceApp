@@ -10,6 +10,8 @@ const userRoutes = require('./routes/user');
 const authRoutes = require('./routes/auth');
 const categoryRoutes = require('./routes/category');
 const productRoutes = require('./routes/product');
+const braintreeRoutes = require('./routes/braintree');
+
 
 require('dotenv').config();
 
@@ -37,9 +39,11 @@ app.use('/api', userRoutes);
 app.use('/api', authRoutes);
 app.use('/api', categoryRoutes);
 app.use('/api', productRoutes);
+app.use('/api', braintreeRoutes);
 
 
 const port = process.env.PORT || 8000;
 app.listen(port, () => {
   console.log(`Server listening on port ${port}`);
 });
+

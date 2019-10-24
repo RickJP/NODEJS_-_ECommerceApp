@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "/Users/rick/Documents/DEV"
+		},
+		{
+			"path": "/Users/rick/Sites"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "DEV"
+	}
+}
