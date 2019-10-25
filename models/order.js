@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+mongoose.Schema;
 const {ObjectId} = mongoose.Schema;
 
 const CartItemSchema = new mongoose.Schema(
@@ -13,8 +13,6 @@ const CartItemSchema = new mongoose.Schema(
 );
 
 const CartItem = mongoose.model('CartItem', CartItemSchema);
-
-
 
 const OrderSchema = new mongoose.Schema(
   {
